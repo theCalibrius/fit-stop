@@ -97,7 +97,7 @@ class App extends React.Component {
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
-  The following functions send requests to the server
+  The following functions send requests to the server ////
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
   getWorkoutHistory() {
