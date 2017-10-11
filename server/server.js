@@ -1,7 +1,7 @@
 var express = require('express')
 var bodyParser = require('body-parser');
 var path = require('path');
-
+var cors =  require('cors');
 var db = require('./db').mongoose;
 var Exercise = require('./db').exerciseModel;
 var User = require('./db').userModel;
@@ -14,15 +14,18 @@ var salt = bcrypt.genSaltSync(saltRounds);
 
 var app = express();
 
-app.listen(process.env.PORT || 3000);
+//app.listen(process.env.PORT || 3000);
+app.listen(3000, function(){
+  console.log('Listening on port 3000')
+})
 
-app.use('/public', express.static('client/public'));
+/*app.use('/public', express.static('client/public'));
 app.use('/react', express.static('node_modules/react/dist'));
 app.use('/react-dom', express.static('node_modules/react-dom/dist'));
-app.use('/jquery', express.static('node_modules/jquery/dist'));
+app.use('/jquery', express.static('node_modules/jquery/dist'));*/
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(cors());
 console.log('server is running');
 
 
@@ -30,9 +33,9 @@ console.log('server is running');
   API Routes
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-app.get('/', (req,res)=> {
+/*app.get('/', (req,res)=> {
   res.sendFile('index.html', { root: 'client/public'});
-});
+});*/
 app.get('/workout', getWorkout);
 app.get('/history', getHistory);
 
@@ -147,6 +150,7 @@ function checkLogin(req, res) {
 
 
 function addSignup(req, res) {
+  console.log('hitSignup')
   var name = req.body.username;
   var pass = req.body.password;
   var hash = bcrypt.hashSync(pass, salt);

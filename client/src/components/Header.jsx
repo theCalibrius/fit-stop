@@ -1,3 +1,8 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+
+
 var Header = (props) => (
   <div className="header">
     {props.showButtons && props.loggedIn && (<button className='blackButton' onClick={props.logOut}>Log Out</button>)}
@@ -10,4 +15,4 @@ var Header = (props) => (
 );
 
 
-window.Header = Header;
+export default Header;

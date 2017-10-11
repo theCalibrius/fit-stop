@@ -1,3 +1,8 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Timer from './Timer.jsx'
+import Exercise from './Exercise.jsx'
+
 class Workout extends React.Component {
   constructor(props) {
     super(props);
@@ -51,5 +56,5 @@ class Workout extends React.Component {
 } // End of Class
 
 
-window.Workout = Workout;
+export default Workout;
 
