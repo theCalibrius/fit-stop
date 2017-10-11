@@ -1,12 +1,22 @@
 var path = require('path');
+ const HtmlWebpackPlugin = require('html-webpack-plugin');
+  const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './client/src/index.jsx',
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname + '/dist'),
-    publicPath: '/dist'
+    publicPath: '/'
   }, 
+  devtool: 'inline-source-map',
+ plugins: [
+      new CleanWebpackPlugin(['dist']),
+      new HtmlWebpackPlugin({
+        title: 'Fity stop',
+        template: 'index.html'
+      })
+    ],
   module: {
   rules: [
     {

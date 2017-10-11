@@ -121,7 +121,7 @@ class App extends React.Component {
   getExercises() {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3000/workout',
+      url: '/workout',
       dataType: 'json',
       data: {
         lengthOfWorkout: this.state.workoutLengthInMins
@@ -139,7 +139,7 @@ class App extends React.Component {
   sendWorkoutData() {
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/addWorkout',
+      url: '/addWorkout',
       data: JSON.stringify({
         username: this.state.username,
         date: Date(),
@@ -162,7 +162,7 @@ class App extends React.Component {
 
     $.ajax({
       type: "POST",
-      url: 'http://localhost:3000/login',
+      url: '/login',
       data: JSON.stringify({
         username: username,
         password: password
@@ -190,7 +190,7 @@ class App extends React.Component {
 
     $.ajax({
       type: "POST",
-      url: 'http://localhost:3000/signup',
+      url: '/signup',
       data: JSON.stringify({
         username: username,
         password: password
