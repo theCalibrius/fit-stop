@@ -42,7 +42,7 @@ var SignUp = (props) => (
               </FormGroup>
               <FormGroup>
                 <Col md={12} sm={12}>
-                  <Button type="submit">Sign up</Button>
+                  <Button bsStyle="info" type="submit">Sign up</Button>
                 </Col>
               </FormGroup>
             </Form>

@@ -8,7 +8,8 @@ import {
   Panel,
   Grid,
   Row,
-  Col
+  Col,
+
 } from "react-bootstrap";
 
 
@@ -16,7 +17,7 @@ var Login = (props) => (
   <div className="loginPage">
     <Grid>
       <Row>
-        <Col md={6} mdOffset={1}>
+        <Col md={6} mdOffset={3}>
           <Panel className="login-panel">
             <h1>Log In</h1>
             <Form horizontal onSubmit={props.login}>
@@ -42,7 +43,7 @@ var Login = (props) => (
               </FormGroup>
               <FormGroup>
                 <Col md={12} sm={12}>
-                  <Button type="submit">Log in</Button>
+                  <Button bsStyle="primary" type="submit">Log in</Button>
                 </Col>
               </FormGroup>
             </Form>
