@@ -297,7 +297,7 @@ label{
   padding: 5px;
   margin: 10px 5px;
 }
-
+/*
 input[id=username], input[id=password] {
   display: inline-block;
   float: left;
@@ -305,11 +305,17 @@ input[id=username], input[id=password] {
   margin: 10px 5px;
   width: 65%;
 }
+*/
 
+.login-panel {
+  background-color: transparent;
+}
+
+/*
 input[id=username]:focus, input[id=password]:focus {
     border: 2px solid #3b8fb5;
 }
-
+*/
 .hideButton {
   display: none;
 }

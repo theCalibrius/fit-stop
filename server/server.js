@@ -1,27 +1,25 @@
-var express = require('express')
-var bodyParser = require('body-parser');
+const express = require('express')
+const bodyParser = require('body-parser');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
-var app = express();
+const app = express();
 const config = require('../webpack.config.js');
 const compiler = webpack(config);
-var path = require('path');
-var cors =  require('cors');
-var db = require('./db').mongoose;
-var Exercise = require('./db').exerciseModel;
-var User = require('./db').userModel;
-var ObjectID = require('mongodb').ObjectID;
-
-
-var bcrypt = require('bcrypt');
+const path = require('path');
+const cors =  require('cors');
+const db = require('./db').mongoose;
+const Exercise = require('./db').exerciseModel;
+const User = require('./db').userModel;
+const ObjectID = require('mongodb').ObjectID;
+const bcrypt = require('bcrypt');
 const saltRounds = 10;
-var salt = bcrypt.genSaltSync(saltRounds);
+const salt = bcrypt.genSaltSync(saltRounds);
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-
+console.log('server is running');
 
 app.use(webpackDevMiddleware( compiler, {
   publicPath: config.output.publicPath
@@ -34,20 +32,10 @@ app.listen(3000, function(){
   console.log('Listening on port 3000')
 })
 
-/*app.use('/public', express.static('client/public'));
-app.use('/react', express.static('node_modules/react/dist'));
-app.use('/react-dom', express.static('node_modules/react-dom/dist'));
-app.use('/jquery', express.static('node_modules/jquery/dist'));*/
-
-
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
   API Routes
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-/*app.get('/', (req,res)=> {
-  res.sendFile('index.html', { root: 'client/public'});
-});*/
 app.get('/workout', getWorkout);
 app.get('/history', getHistory);
 

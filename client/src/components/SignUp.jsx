@@ -1,17 +1,62 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
+import {
+  FormControl,
+  Button,
+  FormGroup,
+  Form,
+  Panel,
+  Grid,
+  Row,
+  Col
+} from "react-bootstrap";
 
 
 var SignUp = (props) => (
   <div className="signupPage">
-    <h1>Sign Up</h1>
-    <form onSubmit={props.signup}>
-      <label htmlFor="username">Username:  </label>
-      <input id="username" type="text" name="username"/>
-      <label htmlFor="password">Password:</label>
-      <input id="password" type="password" name="password"/>
-      <input type="submit" value="Sign Up"/>
-    </form>
+    <Grid>
+      <Row>
+        <Col md={6} mdOffset={1}>
+          <Panel className="login-panel">
+            <h1>Sign Up</h1>
+            <Form horizontal onSubmit={props.login}>
+              <FormGroup>
+                <Col md={6} mdOffset={3}>
+                  <FormControl
+                    id="username"
+                    type="email"
+                    placeholder="Email"
+                    name="username"
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup>
+                <Col md={6} mdOffset={3}>
+                  <FormControl
+                    d="password"
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup>
+                <Col md={12} sm={12}>
+                  <Button type="submit">Sign up</Button>
+                </Col>
+              </FormGroup>
+            </Form>
+          </Panel>
+        </Col>
+      </Row>
+    </Grid>
+
+
+
+
+
+
+
   </div>
 );
 
