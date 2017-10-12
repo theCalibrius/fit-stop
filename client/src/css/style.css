@@ -298,6 +298,20 @@ label{
   margin: 10px 5px;
 }
 
+.hide-alert {
+  display: none; 
+}
+
+.show-alert {
+  background-color: pink;
+  margin-bottom:5px;
+  border-radius: 3px;
+  padding: 10px;
+  border: 1px solid #FF69B4;
+
+}
+
+
 /*input[id=username], input[id=password] {
   display: inline-block;
   float: left;
