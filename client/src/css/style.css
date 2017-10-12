@@ -298,7 +298,7 @@ label{
   margin: 10px 5px;
 }
 
-input[id=username], input[id=password] {
+/*input[id=username], input[id=password] {
   display: inline-block;
   float: left;
   padding: 5px;
@@ -332,4 +332,4 @@ input[type=submit] {
   padding: 10px 50px;
   vertical-align: middle;
   margin-bottom: 20px;
-}
+}*/
