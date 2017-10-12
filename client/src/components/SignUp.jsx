@@ -16,7 +16,7 @@ var SignUp = (props) => (
   <div className="signupPage">
     <Grid>
       <Row>
-        <Col md={6} mdOffset={1}>
+        <Col md={6} mdOffset={3}>
           <Panel className="login-panel">
             <h1>Sign Up</h1>
             <Form horizontal onSubmit={props.login}>
