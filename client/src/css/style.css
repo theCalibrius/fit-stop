@@ -5,10 +5,10 @@ body {
   background-image: url(../img/bg.png);
 }
 
-.App {
+/*.App {
   width: 60%;
   margin: auto;
-}
+}*/
 
 .username {
   display: inline-block;
@@ -298,13 +298,19 @@ label{
   margin: 10px 5px;
 }
 
-input[id=username], input[id=password] {
+/*input[id=username], input[id=password] {
   display: inline-block;
   float: left;
   padding: 5px;
   margin: 10px 5px;
   width: 65%;
 }
+
+
+.login-panel {
+  background-color: transparent;
+}
+
 
 input[id=username]:focus, input[id=password]:focus {
     border: 2px solid #3b8fb5;
@@ -326,7 +332,4 @@ input[type=submit] {
   padding: 10px 50px;
   vertical-align: middle;
   margin-bottom: 20px;
-}
-
-
-
+}*/

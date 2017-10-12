@@ -97,13 +97,13 @@ class App extends React.Component {
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
-  The following functions send requests to the server
+  The following functions send requests to the server ////
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
   getWorkoutHistory() {
     $.ajax({
       method: 'GET',
-      url: '/history',
+      url: 'http://localhost:3000/history',
       dataType: 'json',
       data: {
         username: this.state.username
