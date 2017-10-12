@@ -136,10 +136,10 @@ function checkLogin(req, res) {
         if (bcrypt.compareSync(pass, data.password)=== true) {
           res.status(200).send('Log in success');
         } else {
-          res.status(400).send('Log in attempt failed');
+          res.status(400).send('Login attempt failed');
         }
       } else {
-        res.status(400).send('Log in attempt failed');
+        res.status(400).send('User doesn\'t exist');
       }
     }
   });
@@ -172,7 +172,7 @@ function addSignup(req, res) {
           }
         });
       } else {
-        res.status(400).send('User exsists');
+        res.status(400).send('User already exists');
       }
     }
   });
