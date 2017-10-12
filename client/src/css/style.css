@@ -10,6 +10,10 @@ body {
   margin: auto;
 }*/
 
+.navbar {
+  font-size: 10rem;
+}
+
 .username {
   display: inline-block;
   float: right;

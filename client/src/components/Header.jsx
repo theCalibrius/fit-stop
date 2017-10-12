@@ -25,7 +25,7 @@ import Button from 'react-bootstrap/lib/Button';
 
 var Header = (props) => (
 
-  <Navbar collapseOnSelect>
+  <Navbar collapseOnSelect staticTop className="navbar">
     <Navbar.Header>
       <Navbar.Brand>
         <a href="/">Fit-Stop</a>
@@ -34,13 +34,13 @@ var Header = (props) => (
     <Navbar.Collapse>
       <Nav pullRight>
         {props.showButtons && props.loggedIn && (
-          <NavItem><Button bsStyle="danger" onClick={props.logOut}>Log Out</Button></NavItem>
+          <NavItem><Button bsStyle="danger" bsSize="medium" onClick={props.logOut}>Log Out</Button></NavItem>
         )}
         {props.showButtons && !props.loggedIn && (
-          <NavItem><Button bsStyle="primary" onClick={props.goToLogin}>Log In</Button></NavItem>
+          <NavItem><Button bsStyle="primary" bsSize="medium" onClick={props.goToLogin}>Log In</Button></NavItem>
         )}
         {!props.loggedIn && props.showButtons && (
-          <NavItem><Button bsStyle="info" onClick={props.goToSignUp}>Sign Up</Button></NavItem>
+          <NavItem><Button bsStyle="info" bsSize="medium" onClick={props.goToSignUp}>Sign Up</Button></NavItem>
         )}
         <NavItem><span className='username'>{props.username}</span></NavItem>
       </Nav>
