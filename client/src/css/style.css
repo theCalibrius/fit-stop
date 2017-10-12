@@ -5,10 +5,10 @@ body {
   background-image: url(../img/bg.png);
 }
 
-.App {
+/*.App {
   width: 60%;
   margin: auto;
-}
+}*/
 
 .username {
   display: inline-block;
@@ -327,6 +327,3 @@ input[type=submit] {
   vertical-align: middle;
   margin-bottom: 20px;
 }
-
-
-

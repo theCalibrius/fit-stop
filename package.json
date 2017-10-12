@@ -24,6 +24,7 @@
     "mongoose": "^4.11.9",
     "nodemon": "^1.12.1",
     "react": "^15.6.1",
+    "react-bootstrap": "^0.31.3",
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
