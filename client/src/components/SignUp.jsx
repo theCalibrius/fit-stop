@@ -51,3 +51,7 @@ var SignUp = (props) => (
         </Col>
       </Row>
     </Grid>
+    </div>
+)
+
+export default SignUp

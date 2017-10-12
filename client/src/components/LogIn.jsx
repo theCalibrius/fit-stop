@@ -55,3 +55,5 @@ var Login = (props) => (
     </Grid>
   </div>
 );
+
+export default Login

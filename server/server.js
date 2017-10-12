@@ -1,37 +1,41 @@
-var express = require('express')
-var bodyParser = require('body-parser');
-var path = require('path');
-var cors =  require('cors');
-var db = require('./db').mongoose;
-var Exercise = require('./db').exerciseModel;
-var User = require('./db').userModel;
-var ObjectID = require('mongodb').ObjectID;
-
-
-var bcrypt = require('bcrypt');
+const express = require('express')
+const bodyParser = require('body-parser');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const app = express();
+const config = require('../webpack.config.js');
+const compiler = webpack(config);
+const path = require('path');
+const cors =  require('cors');
+const db = require('./db').mongoose;
+const Exercise = require('./db').exerciseModel;
+const User = require('./db').userModel;
+const ObjectID = require('mongodb').ObjectID;
+const bcrypt = require('bcrypt');
 const saltRounds = 10;
-var salt = bcrypt.genSaltSync(saltRounds);
+const salt = bcrypt.genSaltSync(saltRounds);
 
-var app = express();
-
-app.listen(process.env.PORT || 3000);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 console.log('server is running');
 
-/*app.listen(app.get('port'), function(){
-  console.log('Listening on port 8080')
-})*/
+app.use(webpackDevMiddleware( compiler, {
+  publicPath: config.output.publicPath
+}));
+
+
+
+//app.listen(process.env.PORT || 3000);
+app.listen(3000, function(){
+  console.log('Listening on port 3000')
+})
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
   API Routes
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-/*app.get('/', (req,res)=> {
-  res.sendFile('index.html', { root: 'client/public'});
-});*/
 app.get('/workout', getWorkout);
 app.get('/history', getHistory);
 
@@ -124,7 +128,6 @@ function addWorkout(req, res) {
 
 
 function checkLogin(req, res) {
-  console.log('working');
   var name = req.body.username;
   var pass = req.body.password;
 
@@ -172,7 +175,7 @@ function addSignup(req, res) {
           }
         });
       } else {
-        res.status(400).send('User already exists');
+        res.status(400).send('User exists');
       }
     }
   });
