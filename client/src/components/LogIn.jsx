@@ -1,3 +1,7 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+
 var Login = (props) => (
   <div className="loginPage">
     <h1>Log In</h1>
@@ -12,4 +16,4 @@ var Login = (props) => (
 );
 
 
-window.Login = Login;
+export default Login;

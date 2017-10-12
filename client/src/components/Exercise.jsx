@@ -1,3 +1,7 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+
 var Exercise = (props) => (
   <div className="exercise">
     <div className="exerciseDescription">
@@ -9,4 +13,4 @@ var Exercise = (props) => (
 );
 
 
-window.Exercise = Exercise;
+export default Exercise;
