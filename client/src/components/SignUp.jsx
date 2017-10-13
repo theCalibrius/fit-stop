@@ -20,7 +20,7 @@ var SignUp = (props) => (
           <Panel className="login-panel">
             <h1>Sign Up</h1>
             <div className={props.alert}>Warning: {props.alertText}</div>
-            <Form horizontal onSubmit={props.login}>
+            <Form horizontal onSubmit={props.signup}>
               <FormGroup>
                 <Col md={6} mdOffset={3}>
                   <FormControl

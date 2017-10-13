@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const app = express();
-const config = require('../webpack.config.js');
+const config = require('../webpack.common.js');
 const compiler = webpack(config);
 const path = require('path');
 const cors =  require('cors');
@@ -27,10 +27,12 @@ app.use(webpackDevMiddleware( compiler, {
 
 
 
-//app.listen(process.env.PORT || 3000);
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Doing the thing on port 3000")
+});
+/*app.listen(3000, function(){
   console.log('Listening on port 3000')
-})
+})*/
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
   API Routes

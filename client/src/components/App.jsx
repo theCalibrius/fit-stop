@@ -111,7 +111,7 @@ class App extends React.Component {
   getWorkoutHistory() {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3000/history',
+      url: '/history',
       dataType: 'json',
       data: {
         username: this.state.username
@@ -194,6 +194,7 @@ class App extends React.Component {
   }
 
   signup(event) {
+    console.log('client wants to signup')
     event.preventDefault();
     const data = new FormData(event.target);
     var username = data.get('username');
