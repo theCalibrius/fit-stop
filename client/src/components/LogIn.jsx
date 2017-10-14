@@ -20,7 +20,7 @@ var Login = (props) => (
       <Row>
         <Col md={6} mdOffset={3}>
           <Panel className="login-panel">
-            <h1>Log In</h1>
+            <h2>Log In</h2>
             <div className={props.alert}>Warning: {props.alertText}</div>
             <Form horizontal onSubmit={props.login}>
               <FormGroup>

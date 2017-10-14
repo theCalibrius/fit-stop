@@ -10,8 +10,8 @@ var Dashboard = (props) => (
   <div>
   <Jumbotron className="text-center">
     <h1>Start Workout</h1>
-    <div className="startButton">
-      <img onClick= {props.goToCountdown} src="../img/pizzablue.png" alt="Start"/>
+    <div onClick= {props.goToCountdown} className="startButton">
+      <img src="../img/pizzablue.png" alt="Start"/>
     </div>
   </Jumbotron>
     <History workoutHistory={props.workoutHistory} workoutDate={props.workoutDate} workoutLength={props.workoutLength} loggedIn={props.loggedIn}/>
