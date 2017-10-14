@@ -14,7 +14,9 @@ import PastWorkout from './PastWorkout.jsx'
 //import exampleExerciseData from './src/exampleExerciseData.js'
 import '../css/style.css'
 import $ from 'jQuery'
-
+import {
+  Jumbotron
+} from "react-bootstrap";
 
 class App extends React.Component {
   constructor() {
@@ -293,14 +295,14 @@ class App extends React.Component {
         return (<Dashboard goToCountdown={this.goToCountdown} workoutHistory={this.state.workoutHistory} loggedIn={this.state.loggedIn} />);
       }
       if (this.state.currentState === 'Login') {
-          return (<Login login={this.login} 
-          alert={this.state.alertDisplay } 
+          return (<Login login={this.login}
+          alert={this.state.alertDisplay }
           alertText = {this.state.alert}
           hideAlert={ this.hideAlert} />);
       }
       if (this.state.currentState === 'SignUp') {
-          return (<SignUp signup={this.signup} 
-          alert={this.state.alertDisplay } 
+          return (<SignUp signup={this.signup}
+          alert={this.state.alertDisplay }
           alertText = {this.state.alert}
           hideAlert={ this.hideAlert}
 
@@ -318,10 +320,12 @@ class App extends React.Component {
     }
 
     return (
-      <div className = "App">
+      <div className="container-fluid">
+      <Jumbotron className="text-center sample Jumbotron">
         <Header username={this.state.username} goToLogin={this.goToLogin} goToSignUp={this.goToSignUp} loggedIn={this.state.loggedIn} logOut={this.logOut} showButtons={this.state.showButtons}/>
         {toBeRendered()}
-      </div>
+      </Jumbotron>
+    </div>
     )
   }
 

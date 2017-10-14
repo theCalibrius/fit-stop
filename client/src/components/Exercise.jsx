@@ -6,13 +6,13 @@ import {
 
 
 var Exercise = (props) => (
-  <Jumbotron>
-    <div className="exerciseDescription">
+  <div className="container-fluid text-center">
+    <Jumbotron>
       <img src={props.exercise.picture} className="img-responsive center-block"/>
-      <p><span className="exerciseName">{props.exercise.name}</span></p>
+      <p className="container"><span className="exerciseName">{props.exercise.name}</span></p>
       {props.exercise.description}
-    </div>
-  </Jumbotron>
+    </Jumbotron>
+  </div>
 );
 
 

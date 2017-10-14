@@ -9,6 +9,8 @@ import {
   ButtonToolbar
 } from "react-bootstrap";
 
+const wellStyles = {maxWidth: 400, margin: 'auto'};
+
 class Workout extends React.Component {
   constructor(props) {
     super(props);
@@ -46,24 +48,17 @@ class Workout extends React.Component {
 
    render() {
     return (
-      <Jumbotron className="text-center">
+      <Jumbotron className="text-center sample">
         <span className={'warmupTitle ' + (this.state.warmupActive ? 'activeTitle' : null)}>Warmup</span>
         <span className={'workoutTitle ' + (this.state.workoutActive ? 'activeTitle' : null)}>Workout</span>
         <span className={'cooldownTitle ' + (this.state.cooldownActive ? 'activeTitle' : null)}>Cooldown</span>
 
         <Timer timer= {this.props.timer} />
         <Exercise exercise={this.props.exercise} />
-
-
-        <div className="well">
-            <ButtonToolbar>
-              <Button onClick={this.props.goToDashboard} bsStyle="primary" block>Quit & Back To Dashboard</Button>
-
-              <Button onClick={this.props.goToSummary} bsStyle="primary" block>Summary</Button>
-            </ButtonToolbar>
-        </div>
-
-
+        <ButtonToolbar className="ButtonToolbar">
+          <Button onClick={this.props.goToDashboard} bsStyle="warning" bsSize="large">Quit & Back To Dashboard</Button>
+          <Button onClick={this.props.goToSummary} bsStyle="info" bsSize="large">Summary</Button>
+        </ButtonToolbar>
 
 
       </Jumbotron>

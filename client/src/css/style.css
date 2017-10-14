@@ -5,9 +5,17 @@ body {
   background-image: url(../img/bg.png);
 }
 
-.wellStyles = {
-  maxWidth: 100;
-  margin: '0 auto 10px';
+.sample {
+  background-image: url(../img/bg.png);
+}
+
+.ButtonToolbar {
+  display: flex;
+  justify-content: center;
+}
+
+.Jumbotron {
+  margin-top: 3rem;
 }
 
 /*.App {
@@ -31,22 +39,22 @@ body {
   border-radius: 15px;
 }*/
 
-/*.dashboard, .workout, .summary, .countdown, .loginPage, .signupPage {
+.dashboard, .workout, .summary, .countdown, .loginPage, .signupPage {
   background-color: rgba(255, 255, 255, .5);
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 20px;
   text-align: center;
-}*/
+}
 
 /*.workout {
   padding-top: 40px;
   padding-bottom: 20px;
 }*/
 
-.workout img {
+/*.workout img {
   max-width: 85%
-}
+}*/
 
 .summary, .countdown {
   padding-bottom: 60px;
@@ -54,19 +62,17 @@ body {
 
 .history {
   background-color: rgba(211, 211, 211, .6);
-  border-radius: 15px;
-  padding: 15px;
-  padding-top: 5px;
-  padding-bottom: 30px;
-  margin-bottom: 20px;
-  margin-top: 50px;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .historyNotLoggedIn {
   font-style: italic;
 }
 
-.login {
+/*.login {
   border-width: 2px;
   border-radius: 15px;
   border-color: black;
@@ -84,7 +90,7 @@ body {
   box-sizing: border-box;
   margin-bottom: 20px;
   width: 20%;
-}
+}*/
 
 .pastWorkout {
   background-color: rgba(255, 255, 255, .8);
@@ -149,13 +155,12 @@ body {
 
 .warmupTitle, .workoutTitle, .cooldownTitle {
   color: gray;
-  font-size: 30px;
+  font-size: 2.5rem;
   font-weight: bold;
-  padding: 15px;
-  padding-bottom: 12px;
-  margin-right: 25px;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+  border-top-right-radius: .5rem;
+  border-top-left-radius: .5rem;
 }
 
 .activeTitle {
@@ -171,14 +176,6 @@ body {
 
 .exerciseImage {
   box-shadow: 10px 10px 5px grey;
-}
-
-.exerciseDescription {
-  background-color: rgba(211, 211, 211, .6);
-  border-radius: 15px;
-  padding: 45px 20px;
-  margin-bottom: 20px;
-  margin-top: 10px;
 }
 
 .countdownCircle {

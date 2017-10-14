@@ -1,13 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {
+  Jumbotron
+} from "react-bootstrap";
 
 
 var PastWorkout = (props) => (
-  <div className="pastWorkout">
+  <Jumbotron>
     <p> <span className="dateAndTime">{props.date}</span> | <span>{props.lengthOfWorkout} minutes</span> </p>
-  </div>
+  </Jumbotron>
 );
 
 
 export default PastWorkout;
-
