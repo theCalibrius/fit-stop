@@ -20,7 +20,9 @@ var Summary = (props) => (
       <h3 className="summaryTitle"> Cooldown: </h3>{props.currentWorkout[12].name}, {props.currentWorkout[13].name}, {props.currentWorkout[14].name}
     </div>
     <span className="summaryQuote">"Good things come to those who sweat."</span>
-    <Button onClick={props.goToDashboard} bsStyle="warning" bsSize="large">Back To Dashboard</Button>
+    <div>
+      <Button onClick={props.goToDashboard} bsStyle="warning" bsSize="large">Back To Dashboard</Button>
+    </div>
   </Jumbotron>
 
 );
