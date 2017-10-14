@@ -13,7 +13,7 @@ import {
 
 
 var SignUp = (props) => (
-  <div className="signupPage" onClick={()=> props.hideAlert() }>
+  <div className="text-center" onClick={()=> props.hideAlert() }>
     <Grid>
       <Row>
         <Col md={6} mdOffset={3}>

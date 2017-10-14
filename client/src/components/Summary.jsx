@@ -1,9 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {
+  Jumbotron,
+  Button,
+  Col
+} from "react-bootstrap";
 
 
 var Summary = (props) => (
-  <div className="summary">
+  <Jumbotron className="text-center">
     <h1>Workout Summary</h1>
     <span className="summaryCongrats congratulations">All Done! Congratulations! 🎉</span> <br />
     {!props.loggedIn && (<span className="alert">⚠️  You are currently not logged in. Workout Summary data will not be saved.</span>)}
@@ -15,8 +20,11 @@ var Summary = (props) => (
       <h3 className="summaryTitle"> Cooldown: </h3>{props.currentWorkout[12].name}, {props.currentWorkout[13].name}, {props.currentWorkout[14].name}
     </div>
     <span className="summaryQuote">"Good things come to those who sweat."</span>
-    <button onClick={props.goToDashboard} className="blackButton">Back To Dashboard</button>
-  </div>
+
+    <Col md={12} sm={12}>
+      <Button onClick={props.goToDashboard} bsStyle="primary" type="submit" >Back To Dashboard</Button>
+    </Col>
+  </Jumbotron>
 
 );
 

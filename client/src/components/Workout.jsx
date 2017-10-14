@@ -2,6 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Timer from './Timer.jsx'
 import Exercise from './Exercise.jsx'
+import {
+  Jumbotron,
+  Button,
+  Col,
+  ButtonToolbar
+} from "react-bootstrap";
 
 class Workout extends React.Component {
   constructor(props) {
@@ -40,16 +46,27 @@ class Workout extends React.Component {
 
    render() {
     return (
-      <div className="workout">
+      <Jumbotron className="text-center">
         <span className={'warmupTitle ' + (this.state.warmupActive ? 'activeTitle' : null)}>Warmup</span>
         <span className={'workoutTitle ' + (this.state.workoutActive ? 'activeTitle' : null)}>Workout</span>
         <span className={'cooldownTitle ' + (this.state.cooldownActive ? 'activeTitle' : null)}>Cooldown</span>
 
         <Timer timer= {this.props.timer} />
         <Exercise exercise={this.props.exercise} />
-        <button onClick={this.props.goToDashboard} className="blackButton">Quit & Back To Dashboard</button>
-        <button onClick={this.props.goToSummary} className="blackButton">Summary</button>
-      </div>
+
+
+        <div className="well">
+            <ButtonToolbar>
+              <Button onClick={this.props.goToDashboard} bsStyle="primary" block>Quit & Back To Dashboard</Button>
+
+              <Button onClick={this.props.goToSummary} bsStyle="primary" block>Summary</Button>
+            </ButtonToolbar>
+        </div>
+
+
+
+
+      </Jumbotron>
     );
   }
 
@@ -57,4 +74,3 @@ class Workout extends React.Component {
 
 
 export default Workout;
-

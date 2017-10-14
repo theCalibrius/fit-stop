@@ -15,7 +15,7 @@ import {
 
 var Login = (props) => (
 
-  <div className="loginPage" onClick={()=> props.hideAlert() }>
+  <div className="text-center" onClick={()=> props.hideAlert() }>
     <Grid>
       <Row>
         <Col md={6} mdOffset={3}>
