@@ -44,9 +44,9 @@ var Login = (props) => (
                 </Col>
               </FormGroup>
               <FormGroup>
-                <Col md={12} sm={12}>
+
                   <Button bsStyle="primary" type="submit">Log in</Button>
-                </Col>
+
               </FormGroup>
             </Form>
           </Panel>

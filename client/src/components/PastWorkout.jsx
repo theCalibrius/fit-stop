@@ -6,9 +6,9 @@ import {
 
 
 var PastWorkout = (props) => (
-  <Jumbotron>
+  <div>
     <p> <span className="dateAndTime">{props.date}</span> | <span>{props.lengthOfWorkout} minutes</span> </p>
-  </Jumbotron>
+  </div>
 );
 
 

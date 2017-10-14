@@ -21,7 +21,7 @@ import Button from 'react-bootstrap/lib/Button';
 
 var Header = (props) => (
 
-  <Navbar fixedTop className="navbar">
+  <Navbar fixedTop inverse className="navbar">
     <Navbar.Header>
       <Navbar.Brand>
         <a href="/">Fit-Stop</a>
