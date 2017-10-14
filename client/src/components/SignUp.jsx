@@ -13,13 +13,14 @@ import {
 
 
 var SignUp = (props) => (
-  <div className="signupPage">
+  <div className="signupPage" onClick={()=> props.hideAlert() }>
     <Grid>
       <Row>
         <Col md={6} mdOffset={3}>
           <Panel className="login-panel">
             <h1>Sign Up</h1>
-            <Form horizontal onSubmit={props.login}>
+            <div className={props.alert}>Warning: {props.alertText}</div>
+            <Form horizontal onSubmit={props.signup}>
               <FormGroup>
                 <Col md={6} mdOffset={3}>
                   <FormControl
@@ -50,15 +51,7 @@ var SignUp = (props) => (
         </Col>
       </Row>
     </Grid>
+    </div>
+)
 
-
-
-
-
-
-
-  </div>
-);
-
-
-export default SignUp;
+export default SignUp

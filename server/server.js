@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const app = express();
-const config = require('../webpack.config.js');
+const config = require('../webpack.common.js');
 const compiler = webpack(config);
 const path = require('path');
 const cors =  require('cors');
@@ -27,10 +27,12 @@ app.use(webpackDevMiddleware( compiler, {
 
 
 
-//app.listen(process.env.PORT || 3000);
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Doing the thing on port 3000")
+});
+/*app.listen(3000, function(){
   console.log('Listening on port 3000')
-})
+})*/
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
   API Routes
@@ -139,10 +141,10 @@ function checkLogin(req, res) {
         if (bcrypt.compareSync(pass, data.password)=== true) {
           res.status(200).send('Log in success');
         } else {
-          res.status(400).send('Log in attempt failed');
+          res.status(400).send('Login attempt failed');
         }
       } else {
-        res.status(400).send('Log in attempt failed');
+        res.status(400).send('User doesn\'t exist');
       }
     }
   });
@@ -175,7 +177,7 @@ function addSignup(req, res) {
           }
         });
       } else {
-        res.status(400).send('User exsists');
+        res.status(400).send('User exists');
       }
     }
   });

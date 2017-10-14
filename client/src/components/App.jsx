@@ -30,7 +30,9 @@ class App extends React.Component {
       countdown: 3,
       time: null,
       showButtons: true,
-      workoutLengthInMins: 15
+      workoutLengthInMins: 15,
+      alertDisplay: "hide-alert",
+      alert: ''
     };
 
     this.goToWorkout = this.goToWorkout.bind(this);
@@ -44,6 +46,7 @@ class App extends React.Component {
     this.logOut = this.logOut.bind(this);
     this.login = this.login.bind(this);
     this.signup = this.signup.bind(this);
+    this. hideAlert = this. hideAlert.bind(this);
 
   }
 
@@ -95,6 +98,11 @@ class App extends React.Component {
     }
   }
 
+  hideAlert(){
+    let status = "hide-alert"
+    this.setState({alertDisplay:status})
+  }
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
   The following functions send requests to the server ////
@@ -103,7 +111,7 @@ class App extends React.Component {
   getWorkoutHistory() {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3000/history',
+      url: '/history',
       dataType: 'json',
       data: {
         username: this.state.username
@@ -175,7 +183,10 @@ class App extends React.Component {
           this.setState({loggedIn: true});
           this.goToDashboard();
         } else {
-          alert("Username and Password Invalid");
+          let status = "show-alert"
+          let alertText = data.responseText
+          this.setState({alertDisplay:status})
+          this.setState({alert: alertText })
           this.goToLogin();
         }
       }
@@ -183,6 +194,7 @@ class App extends React.Component {
   }
 
   signup(event) {
+    console.log('client wants to signup')
     event.preventDefault();
     const data = new FormData(event.target);
     var username = data.get('username');
@@ -203,7 +215,10 @@ class App extends React.Component {
           this.setState({loggedIn: true});
           this.goToDashboard();
         } else {
-          alert("Username and Password Invalid");
+          let status = "show-alert"
+          let alertText = data.responseText
+          this.setState({alertDisplay:status})
+          this.setState({alert: alertText })
           this.goToSignUp();
         }
       }
@@ -278,10 +293,18 @@ class App extends React.Component {
         return (<Dashboard goToCountdown={this.goToCountdown} workoutHistory={this.state.workoutHistory} loggedIn={this.state.loggedIn} />);
       }
       if (this.state.currentState === 'Login') {
-          return (<Login login={this.login} />);
+          return (<Login login={this.login} 
+          alert={this.state.alertDisplay } 
+          alertText = {this.state.alert}
+          hideAlert={ this.hideAlert} />);
       }
       if (this.state.currentState === 'SignUp') {
-          return (<SignUp signup={this.signup}  />);
+          return (<SignUp signup={this.signup} 
+          alert={this.state.alertDisplay } 
+          alertText = {this.state.alert}
+          hideAlert={ this.hideAlert}
+
+           />);
       }
       if (this.state.currentState === 'Countdown') {
           return (<Countdown countdown={this.state.countdown} />);

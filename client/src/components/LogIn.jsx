@@ -14,12 +14,14 @@ import {
 
 
 var Login = (props) => (
-  <div className="loginPage">
+
+  <div className="loginPage" onClick={()=> props.hideAlert() }>
     <Grid>
       <Row>
         <Col md={6} mdOffset={3}>
           <Panel className="login-panel">
             <h1>Log In</h1>
+            <div className={props.alert}>Warning: {props.alertText}</div>
             <Form horizontal onSubmit={props.login}>
               <FormGroup>
                 <Col md={6} mdOffset={3}>
@@ -54,5 +56,4 @@ var Login = (props) => (
   </div>
 );
 
-
-export default Login;
+export default Login
