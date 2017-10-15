@@ -359,7 +359,7 @@ var highKnees = {
   name: 'High Knees',
   description: 'Begin jogging in place, lifting the knees as high as you can. Try to lift your knees up to hip level but keep the core tight to support your back. For a more advanced move, hold your hands straight at hip level and try to touch the knees to your hands as you lift them.Bring the knees towards your hands instead of reaching the hands to the knees!',
   type: 'warmup',
-  picture: 'http://workoutlabs.com/wp-content/uploads/watermarked/High_Knees1.png',
+  picture: 'https://img.aws.livestrongcdn.com/ls-article-image-673/cme/photography.prod.demandstudios.com/762b8b3e-7048-45c8-9e17-1fe72b138ff9.gif',
   environment: 'indoor',
   muscleGroup: 'core',
   difficulty: 'easy'
@@ -369,7 +369,7 @@ var catCow = {
   name: 'Cat Cow',
   description: 'Kneel on a mat with your hands and knees shoulder-width apart.Pull your abs in, hunch your back up and flex your spine.Hold the stretch and then release to the starting position.',
   type: 'warmup',
-  picture: 'http://dingo.care2.com/pictures/greenliving/uploads/2013/03/Cat-Cow-Poses.jpg',
+  picture: 'https://www.prevention.com/sites/prevention.com/files/07-cat-cow.gif',
   environment: 'indoor',
   muscleGroup: 'core',
   difficulty: 'easy'
@@ -379,7 +379,7 @@ var hipCircles = {
   name: 'Hip Circles',
   description: 'Stand tall with your chest up. Move your feet to shoulder-width apart. Place your hands on your hips.Begin the movement by shifting your hips to the left. Bring them forward and to the right in a circular motion. From the right, shift your hips back and to the left.Continue in this circular motion. Stop once to switch directions.',
   type: 'warmup',
-  picture: 'http://workoutlabs.com/wp-content/uploads/watermarked/Hip_Circles-1.png',
+  picture: 'https://media.giphy.com/media/sZ6HIjiBOhTxK/giphy.gif',
   environment: 'indoor',
   muscleGroup: 'core',
   difficulty: 'easy'
@@ -394,7 +394,7 @@ var flutterKicks = {
   name: 'Flutter kicks',
   description: 'Lie on a mat with your hands under your buttocks and raise your legs slightly, keeping knees straight and ankles together.Keep abs engaged and perform short kicks in an alternating fashion.Repeat as needed and then lower legs to the ground.',
   type: 'workout',
-  picture: 'http://workoutlabs.com/wp-content/uploads/watermarked/Flutter_Kicks_M_WorkoutLabs.png',
+  picture: 'https://i.imgur.com/eotOxLd.gif',
   environment: 'indoor',
   muscleGroup: 'core',
   difficulty: 'intermediate'
@@ -404,7 +404,7 @@ var plank = {
   name: 'Plank',
   description: 'Get into a face down position on the floor supporting your upper body on your forearms. Your elbows should be bent at 90 degrees.Extend your legs straight out behind you, supporting them on your toes and balls of your feet.Keep your body in a straight line by tightening your abdominal and oblique muscles.',
   type: 'workout',
-  picture: 'http://workoutlabs.com/wp-content/uploads/watermarked/Plank_F_WorkoutLabs.png',
+  picture: 'https://i.imgur.com/OrUga8Z.gif',
   environment: 'indoor',
   muscleGroup: 'core',
   difficulty: 'intermediate'
@@ -414,7 +414,7 @@ var plankKneeToElbow = {
   name: 'Plank Knee to Elbow',
   description: 'Lay face down on the ground with extended legs.Point your toes while you place your hands beneath your shoulders.Push yourself up into the plank position.Maintaining a tight core and flat back, bring your left knee to your right elbow.Pause and slowly return each to the starting point.Repeat with the other side and keep alternating.',
   type: 'workout',
-  picture: 'http://workoutlabs.com/wp-content/uploads/watermarked/Plank_Knee_to_Elbow_F_WorkoutLabs.png',
+  picture: 'https://www.toneitup.com/wp-content/uploads/2016/06/Karena-Knee-to-Elbow-Planks.gif',
   environment: 'indoor',
   muscleGroup: 'core',
   difficulty: 'intermediate'
@@ -424,7 +424,7 @@ var windshieldWipers = {
   name: 'Windshield Wipers',
   description: 'Lie on an exercise mat, keeping your back flat with no arching of the spine.Extend your arms out beside you at shoulder level, with your palms pressed firmly to the floor. Your upper body should form a “T” shape.Raise your feet off the floor by bending your hips and knees to 90 degree angles. This is the start position.As you exhale, rotate both your thighs to one side until the outer thigh touches the ground or until you feel a stretch in your abs and lower back.Pause briefly, then rotate to the other side without pausing in the start position.When you have rotated to both sides, that is one repetition.',
   type: 'workout',
-  picture: 'http://workoutlabs.com/wp-content/uploads/watermarked/Windshield_wipers_M_WorkoutLabs.png',
+  picture: 'https://thumbs.gfycat.com/MarriedMeagerAmphibian-max-1mb.gif',
   environment: 'indoor',
   muscleGroup: 'core',
   difficulty: 'intermediate'
@@ -434,7 +434,7 @@ var reverseCrunch = {
   name: 'Reverse Crunch',
   description: 'Lie flat on an exercise mat on the floor.Extend your legs fully and place your hands palms down, flat on the floor beside you.Keeping your feet together, draw your knees up towards your chest, until your thighs are at 90 degrees to the floor and your calves are parallel to it. This is the start position.As you inhale, curl your hips up off the floor while bringing your knees further towards your chest.Continue the movement until your knees are touching your chest, or as far as comfortable.Hold for a count of one.In a controlled movement, return your legs to the start position, exhaling as you do so.Repeat.',
   type: 'workout',
-  picture: 'http://workoutlabs.com/wp-content/uploads/watermarked/Reverse_Crunch_F_WorkoutLabs.png',
+  picture: 'https://img.aws.livestrongcdn.com/ls-slideshow-main-image/cme/photography.prod.demandstudios.com/b6e78136-8792-4288-b0a9-350f94adfe12.gif',
   environment: 'indoor',
   muscleGroup: 'core',
   difficulty: 'intermediate'
@@ -444,7 +444,7 @@ var sitUps = {
   name: 'Sit Ups',
   description: 'Lie with knees bent and feet flat on the floor. You can have someone hold your feet or place them under something to keep them steady.Place your hands behind your head, elbows pointing out.Engage your abs and lift your head, neck and shoulders up. Pretend you are holding a small ball under your chin.Hold and then return to starting position.',
   type: 'workout',
-  picture: 'http://workoutlabs.com/wp-content/uploads/watermarked/Sit-up_F_WorkoutLabs.png',
+  picture: 'https://img.aws.livestrongcdn.com/ls-slideshow-main-image/cme/photography.prod.demandstudios.com/435b8997-11d2-4efa-ad7e-238ec555a225.gif',
   environment: 'indoor',
   muscleGroup: 'core',
   difficulty: 'intermediate'

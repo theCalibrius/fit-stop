@@ -208,10 +208,10 @@ body {
 
 .summaryQuote {
   font-style: italic;
-  font-size: 5rem;
+  font-size: 3rem;
   display: inline-block;
-  padding: 3rem;
-  margin-top: 1rem;
+  padding: 2rem;
+  margin-top: .5rem;
 }
 
 .alert {

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import {
   Jumbotron
 } from "react-bootstrap";
+import Moment from 'react-moment';
 
 
 var PastWorkout = (props) => (

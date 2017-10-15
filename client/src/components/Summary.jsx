@@ -5,6 +5,7 @@ import {
   Button,
   Col
 } from "react-bootstrap";
+import Moment from 'react-moment';
 
 
 var Summary = (props) => (
