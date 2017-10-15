@@ -487,7 +487,7 @@ var doubleSideJacknifes = {
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 var cobra = {
-  name: 'cobra stretch',
+  name: 'Cobra Stretch',
   description: 'Lie face down with your hands under your shoulders.  Point your feet downwards to lengthen your spine.  Slowly push your torso up as far as you comfortably can – try to get your hips to rise off the floor slightly.  Hold the stretch and then lower down to starting position.',
   type: 'cooldown',
   picture: 'https://static1.squarespace.com/static/56ee1fcbc6fc08c51ceae771/57434ec41bbee07d9fb43342/57434ed801dbae831f56c591/1464028892736/Cobra+Stretch_500p.gif',
