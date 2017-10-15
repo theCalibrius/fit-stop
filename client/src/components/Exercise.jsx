@@ -8,8 +8,8 @@ import {
 var Exercise = (props) => (
   <div className="container-fluid text-center">
     <Jumbotron>
-      <img src={props.exercise.picture} className="img-responsive center-block rounded img-thumbnail exerciseImage"/>
       <p className="container"><span className="exerciseName">{props.exercise.name}</span></p>
+      <img src={props.exercise.picture} className="img-responsive center-block rounded img-thumbnail exerciseImage"/>
       {props.exercise.description}
     </Jumbotron>
   </div>

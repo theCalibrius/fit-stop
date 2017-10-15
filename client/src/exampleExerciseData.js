@@ -149,7 +149,7 @@ var doubleSideJacknifes = {
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 var cobra = {
-  name: 'cobra stretch',
+  name: 'Cobra Stretch',
   description: 'Lie face down with your hands under your shoulders.Point your feet downwards to lengthen your spine.Slowly push your torso up as far as you comfortably can – try to get your hips to rise off the floor slightly.Hold the stretch and then lower down to starting position.',
   type: 'cooldown',
   picture: 'http://workoutlabs.com/wp-content/uploads/watermarked/Cobra_Stretch_M_WorkoutLabs.png',
