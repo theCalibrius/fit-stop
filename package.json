@@ -8,9 +8,9 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "start" : "node ./server/server.js",
     "server": "nodemon ./server/server.js",
-    "build": "webpack --config webpack.prod.js"
+    "postinstall": "webpack -p --config webpack.prod.js --progress"
   },
   "dependencies": {
     "bcrypt": "^1.0.3",
