@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Amiko|Fugaz+One');
 
 
+
 body {
   font-family: 'Montserrat', sans-serif;
   background-image: url(../img/bg.png);
@@ -133,7 +134,8 @@ body {
 }
 
 .exerciseImage {
-  box-shadow: 10px 10px 5px grey;
+  /*box-shadow: 10px 10px 5px grey;*/
+  margin-bottom:25px;
 }
 
 .countdownCircle {
