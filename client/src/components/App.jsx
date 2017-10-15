@@ -9,6 +9,9 @@ import Countdown from './Countdown.jsx'
 import Workout from './Workout.jsx'
 import History from './History.jsx'
 import Summary from './Summary.jsx'
+import '../img/pizzablue.png'
+import '../img/pizzablack.png'
+
 
 import PastWorkout from './PastWorkout.jsx'
 //import exampleExerciseData from './src/exampleExerciseData.js'
