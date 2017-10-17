@@ -8,11 +8,12 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "start" : "node ./server/server.js",
+    "start": "node ./server/server.js",
     "server": "nodemon ./server/server.js",
     "postinstall": "webpack -p --config webpack.prod.js --progress"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",

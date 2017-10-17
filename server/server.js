@@ -10,6 +10,7 @@ const cors =  require('cors');
 const db = require('./db').mongoose;
 const Exercise = require('./db').exerciseModel;
 const User = require('./db').userModel;
+const Locations = require('./db').userLocationModel;
 const ObjectID = require('mongodb').ObjectID;
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -28,7 +29,7 @@ app.use(webpackDevMiddleware( compiler, {
 
 
 
-app.listen(port || 3000)
+app.listen(port || 3000);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
   API Routes
@@ -61,6 +62,11 @@ function getHistory(req, res) {
     }
   });
 }
+
+function getLocations(req, res) {
+
+}
+
 
 function getWorkout(req, res) {
   var returnObj = [];
@@ -104,6 +110,7 @@ function getWorkout(req, res) {
     }
   });
 }
+
 
 function addWorkout(req, res) {
   var name = req.body.username;

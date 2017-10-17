@@ -11,8 +11,6 @@ import History from './History.jsx'
 import Summary from './Summary.jsx'
 import '../img/pizzablue.png'
 import '../img/pizzablack.png'
-
-
 import PastWorkout from './PastWorkout.jsx'
 //import exampleExerciseData from './src/exampleExerciseData.js'
 import '../css/style.css'
@@ -20,6 +18,10 @@ import $ from 'jquery'
 import {
   Jumbotron
 } from "react-bootstrap";
+
+import axios from 'axios';
+
+
 
 class App extends React.Component {
   constructor() {
@@ -37,7 +39,8 @@ class App extends React.Component {
       showButtons: true,
       workoutLengthInMins: 15,
       alertDisplay: "hide-alert",
-      alert: ''
+      alert: '',
+      userLocations: []
     };
 
     this.goToWorkout = this.goToWorkout.bind(this);
@@ -51,7 +54,7 @@ class App extends React.Component {
     this.logOut = this.logOut.bind(this);
     this.login = this.login.bind(this);
     this.signup = this.signup.bind(this);
-    this. hideAlert = this. hideAlert.bind(this);
+    this.hideAlert = this.hideAlert.bind(this);
 
   }
 
@@ -149,6 +152,12 @@ class App extends React.Component {
     });
   }
 
+  getUserLocations () {
+    //get user locations from DB
+    //store in state?
+    console.log('gettingUserLocations')
+  }
+
   sendWorkoutData() {
     $.ajax({
       type: 'POST',
@@ -196,14 +205,17 @@ class App extends React.Component {
         }
       }
     });
-  }
+
+    getUserLocations ();
+  };
 
   signup(event) {
-    console.log('client wants to signup')
+    console.log('client wants to signup');
     event.preventDefault();
     const data = new FormData(event.target);
     var username = data.get('username');
     var password = data.get('password');
+
 
     $.ajax({
       type: "POST",

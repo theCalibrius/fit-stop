@@ -39,6 +39,12 @@ var userSchema = new Schema({
   workoutHistory: []
 });
 
+var userLocationSchema = new Schema({
+  location: String,
+  latitude: String,
+  longitude: String
+});
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
    Model Creation based on Schemas
@@ -46,8 +52,11 @@ var userSchema = new Schema({
 
 var Exercise = mongoose.model('Exercise', exerciseSchema);
 var User = mongoose.model('User', userSchema);
+var Locations = mongoose.model('Location', userLocationSchema);
 
 module.exports.exerciseModel = Exercise;
 module.exports.userModel = User;
+module.exports.userLocationModel = Locations;
+
 module.exports.mongoose = mongoose;
 
