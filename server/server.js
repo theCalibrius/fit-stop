@@ -14,12 +14,13 @@ const ObjectID = require('mongodb').ObjectID;
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const salt = bcrypt.genSaltSync(saltRounds);
-
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 console.log('server is running');
+app.use(express.static(__dirname));
 
 app.use(webpackDevMiddleware( compiler, {
   publicPath: config.output.publicPath
@@ -27,12 +28,7 @@ app.use(webpackDevMiddleware( compiler, {
 
 
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Doing the thing on port 3000")
-});
-/*app.listen(3000, function(){
-  console.log('Listening on port 3000')
-})*/
+app.listen(port || 3000)
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
   API Routes
@@ -44,6 +40,11 @@ app.get('/history', getHistory);
 app.post('/addWorkout', addWorkout);
 app.post('/login', checkLogin);
 app.post('/signup', addSignup);
+/************** fallback route **************************/
+app.get('*', (req,res) =>{
+  res.sendFile(path.resolve(__dirname, 'index.html'))
+});
+
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *

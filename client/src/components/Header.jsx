@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import Navbar from 'react-bootstrap/lib/Navbar';
 import Nav from 'react-bootstrap/lib/Nav';
-import MenuItem from 'react-bootstrap/lib/Menuitem';
-import NavItem from 'react-bootstrap/lib/Navitem';
+import MenuItem from 'react-bootstrap/lib/MenuItem';
+import NavItem from 'react-bootstrap/lib/NavItem';
 import Button from 'react-bootstrap/lib/Button';
 
 var Header = (props) => (
 
-  <Navbar fixedTop className="navbar">
+  <Navbar fixedTop collapseOnSelect className="navbar">
     <Navbar.Header>
       <Navbar.Brand>
         <a href="/">Fit-Stop</a>

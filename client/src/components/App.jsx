@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Header from './Header.jsx'
 import Timer from './Timer.jsx'
 import Dashboard from './Dashboard.jsx'
-import Login from './Login.jsx'
+import Login from './LogIn.jsx'
 import SignUp from './SignUp.jsx'
 import Countdown from './Countdown.jsx'
 import Workout from './Workout.jsx'
@@ -16,7 +16,7 @@ import '../img/pizzablack.png'
 import PastWorkout from './PastWorkout.jsx'
 //import exampleExerciseData from './src/exampleExerciseData.js'
 import '../css/style.css'
-import $ from 'jQuery'
+import $ from 'jquery'
 import {
   Jumbotron
 } from "react-bootstrap";
