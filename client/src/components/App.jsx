@@ -152,10 +152,16 @@ class App extends React.Component {
     });
   }
 
+  //gets called in login
   getUserLocations () {
-    //get user locations from DB
-    //store in state?
     console.log('gettingUserLocations')
+    axios.get('/location').then((places)=>{
+      var userLocations = {userLocations : places };
+      this.setState(userLocations);
+    })
+    .catch((err)=> {
+      console.log(err);
+    });
   }
 
   sendWorkoutData() {
@@ -206,7 +212,7 @@ class App extends React.Component {
       }
     });
 
-    getUserLocations ();
+    getUserLocations();
   };
 
   signup(event) {
@@ -215,6 +221,10 @@ class App extends React.Component {
     const data = new FormData(event.target);
     var username = data.get('username');
     var password = data.get('password');
+
+
+
+    //locations
 
 
     $.ajax({
@@ -240,6 +250,8 @@ class App extends React.Component {
         }
       }
     });
+
+
   }
 
   logOut() {

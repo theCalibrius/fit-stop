@@ -52,11 +52,11 @@ var userLocationSchema = new Schema({
 
 var Exercise = mongoose.model('Exercise', exerciseSchema);
 var User = mongoose.model('User', userSchema);
-var Locations = mongoose.model('Location', userLocationSchema);
+var Location = mongoose.model('Location', userLocationSchema);
 
 module.exports.exerciseModel = Exercise;
 module.exports.userModel = User;
-module.exports.userLocationModel = Locations;
+module.exports.userLocationModel = Location;
 
 module.exports.mongoose = mongoose;
 

@@ -10,7 +10,7 @@ const cors =  require('cors');
 const db = require('./db').mongoose;
 const Exercise = require('./db').exerciseModel;
 const User = require('./db').userModel;
-const Locations = require('./db').userLocationModel;
+const Location = require('./db').userLocationModel;
 const ObjectID = require('mongodb').ObjectID;
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -37,11 +37,13 @@ app.listen(port || 3000);
 
 app.get('/workout', getWorkout);
 app.get('/history', getHistory);
-app.get('/locations', getLocations);
+app.get('/location', getLocations);
 
 app.post('/addWorkout', addWorkout);
 app.post('/login', checkLogin);
 app.post('/signup', addSignup);
+app.post('/addLocation', addLocation);
+
 
 /************** fallback route **************************/
 app.get('*', (req,res) =>{
@@ -71,7 +73,7 @@ function getLocations(req, res) {
     if(err){
       console.log('Error in getting user locations');
     } else {
-      locations;
+      res.status(200).send(data);
     }
   });
 }
@@ -186,6 +188,38 @@ function checkLogin(req, res) {
         }
       } else {
         res.status(400).send('User doesn\'t exist');
+      }
+    }
+  });
+}
+
+function addLocation(req, res) {
+  var userLocation = req.body.location;
+  var lat = req.body.latitude;
+  var long = req.body.longitude;
+  var id = new ObjectID();
+
+  Location.find({location: userLocation}, (err, data)=>{
+    if(err) {
+      console.log('DB access error' + err);
+    } else {
+      if (!data[0]) {
+        var newLocation = new Location({
+          _id: id,
+          latitude: lat,
+          longitude: long,
+          location: userLocation
+        });
+        newLocation.save((err)=>{
+          if (err) {
+            console.log(err);
+          } else {
+            res.status(200).send('Location Added');
+          }
+        })
+
+      } else {
+        res.status(400).send('Location Exists');
       }
     }
   });
