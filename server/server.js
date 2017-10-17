@@ -37,10 +37,12 @@ app.listen(port || 3000);
 
 app.get('/workout', getWorkout);
 app.get('/history', getHistory);
+app.get('/locations', getLocations);
 
 app.post('/addWorkout', addWorkout);
 app.post('/login', checkLogin);
 app.post('/signup', addSignup);
+
 /************** fallback route **************************/
 app.get('*', (req,res) =>{
   res.sendFile(path.resolve(__dirname, 'index.html'))
@@ -64,7 +66,21 @@ function getHistory(req, res) {
 }
 
 function getLocations(req, res) {
+  var locations = [];
+  Location.find({}, (err, data)=> {
+    if(err){
+      console.log('Error in getting user locations');
+    } else {
+      locations;
+    }
+  });
+}
 
+//maybe use this for code repitition in getWorkout function?
+function getXtimes(cb,num){
+  for(var i = 0; i < num; i++) {
+    cb();
+  }
 }
 
 
@@ -75,6 +91,12 @@ function getWorkout(req, res) {
     if(err) {
       console.log('err happened with cooldown retrieval: ' + err);
     } else {
+
+      // getXtimes(()=> {
+      //   returnObj.push(data[Math.floor(Math.random()*data.length)]);
+      // }, 3);
+
+
       returnObj.push(data[Math.floor(Math.random()*data.length)]);
       returnObj.push(data[Math.floor(Math.random()*data.length)]);
       returnObj.push(data[Math.floor(Math.random()*data.length)]);
@@ -83,6 +105,12 @@ function getWorkout(req, res) {
         if(err) {
           console.log('err happened with cooldown retrieval: ' + err);
         } else {
+
+
+          // getXtimes(()=> {
+          //   returnObj.push(data[Math.floor(Math.random()*data.length)]);
+          // }, 9);
+
           returnObj.push(data[Math.floor(Math.random()*data.length)]);
           returnObj.push(data[Math.floor(Math.random()*data.length)]);
           returnObj.push(data[Math.floor(Math.random()*data.length)]);
@@ -97,6 +125,11 @@ function getWorkout(req, res) {
             if(err) {
               console.log('err happened with cooldown retrieval: ' + err);
             } else {
+
+              // getXtimes(()=> {
+              //   returnObj.push(data[Math.floor(Math.random()*data.length)]);
+              // }, 3);
+
               returnObj.push(data[Math.floor(Math.random()*data.length)]);
               returnObj.push(data[Math.floor(Math.random()*data.length)]);
               returnObj.push(data[Math.floor(Math.random()*data.length)]);
