@@ -21,6 +21,10 @@ body {
   margin-top: 3rem;
 }
 
+.jumbotron {
+  padding-top:10px;
+}
+
 .navbar {
   font-family: 'Fugaz One', cursive;
   font-size: 2.5rem;
