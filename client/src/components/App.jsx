@@ -34,6 +34,9 @@ class App extends React.Component {
       loggedIn: false,
       countdown: 3,
       time: null,
+      isPaused: false,
+      pauseButtonText: 'Pause Workout',
+      pauseButtonStyle: 'info',
       showButtons: true,
       workoutLengthInMins: 15,
       alertDisplay: "hide-alert",
@@ -42,6 +45,7 @@ class App extends React.Component {
 
     this.goToWorkout = this.goToWorkout.bind(this);
     this.goToSummary = this.goToSummary.bind(this);
+    this.togglePauseForWorkoutTimer = this.togglePauseForWorkoutTimer.bind(this);
     this.goToDashboard = this.goToDashboard.bind(this);
     this.goToCountdown = this.goToCountdown.bind(this);
     this.goToLogin = this.goToLogin.bind(this);
@@ -264,13 +268,27 @@ class App extends React.Component {
     this.setState({interval: interval});
   }
 
+  togglePauseForWorkoutTimer() {
+    if (!this.state.isPaused) {
+      this.setState({pauseButtonStyle: 'success'});
+      this.setState({pauseButtonText: 'Resume Workout'});
+      this.setState({isPaused: true});
+    } else {
+      this.setState({pauseButtonStyle: 'info'});
+      this.setState({pauseButtonText: 'Pause Workout'});
+      this.setState({isPaused: false});
+    }
+  }
+
   timer() {
     var current = this.state.time;
-    current--;
+    if (!this.state.isPaused) {
+      current--;
+    }
     this.setState({time: current});
     if (this.state.time <= 0) {
       this.goToSummary();
-    } else if (this.state.time % 60 === 0) {
+    } else if (this.state.time % 60 === 0 && !this.state.isPaused) {
       var next = this.state.currentExercise;
       next++;
       this.setState({currentExercise: next});
@@ -315,7 +333,7 @@ class App extends React.Component {
           return (<Countdown countdown={this.state.countdown} />);
       }
       if (this.state.currentState === 'Workout') {
-        return (<Workout exercise={this.state.currentWorkout[this.state.currentExercise]} timer={this.formatTime(this.state.time)} countdown={this.state.countdown} goToSummary={this.goToSummary} goToDashboard={this.goToDashboard} ref="workoutPage" />);
+        return (<Workout exercise={this.state.currentWorkout[this.state.currentExercise]} timer={this.formatTime(this.state.time)} countdown={this.state.countdown} pauseButtonStyle={this.state.pauseButtonStyle} pauseButtonText={this.state.pauseButtonText} pauseWorkout={this.togglePauseForWorkoutTimer} goToSummary={this.goToSummary} goToDashboard={this.goToDashboard} ref="workoutPage" />);
       }
       if (this.state.currentState === 'Summary') {
         return (<Summary goToDashboard={this.goToDashboard} currentWorkout={this.state.currentWorkout} workoutDate={this.state.workoutDate} workoutLengthInMins={this.state.workoutLengthInMins} loggedIn={this.state.loggedIn} />);
