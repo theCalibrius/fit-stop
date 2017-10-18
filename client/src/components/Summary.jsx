@@ -24,9 +24,11 @@ var Summary = (props) => (
     <span className="summaryQuote">"Good things come to those who sweat."</span>
     <div>
       <h4>See Where Other User's Are Working Out!</h4>
-      <img src="googleMap.png" alt="Google Map of Users" />
+      <div className="googleMap">
+      <img src="http://gdurl.com/JRTN" alt="Google Map of Users" />
+      </div>
     </div>
-
+    <br/>
 
     <div>
       <Button onClick={props.goToDashboard} bsStyle="warning" bsSize="large">Back To Dashboard</Button>

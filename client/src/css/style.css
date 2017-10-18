@@ -271,7 +271,12 @@ body {
 
 }
 
-
+.googleMap {
+   max-width: 100%;
+   height: auto;
+   margin: auto;
+   display: block;
+}
 /*input[id=username], input[id=password] {
   display: inline-block;
   float: left;
