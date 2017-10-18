@@ -6,6 +6,7 @@ import {
   Col
 } from "react-bootstrap";
 import Moment from 'react-moment';
+import MapComponent from './GoogleMap.jsx';
 
 
 var Summary = (props) => (
@@ -21,6 +22,12 @@ var Summary = (props) => (
       <h3 className="summaryTitle"> Cooldown: </h3>{props.currentWorkout[12].name}, {props.currentWorkout[13].name}, {props.currentWorkout[14].name}
     </div>
     <span className="summaryQuote">"Good things come to those who sweat."</span>
+    <div>
+      <h4>See Where Other User's Are Working Out!</h4>
+      <img src="googleMap.png" alt="Google Map of Users" />
+    </div>
+
+
     <div>
       <Button onClick={props.goToDashboard} bsStyle="warning" bsSize="large">Back To Dashboard</Button>
     </div>
