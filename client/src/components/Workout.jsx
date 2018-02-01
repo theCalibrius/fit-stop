@@ -6,6 +6,8 @@ import {
   Jumbotron,
   Button,
   Col,
+  Grid,
+  Row,
   ButtonToolbar
 } from "react-bootstrap";
 
@@ -48,11 +50,20 @@ class Workout extends React.Component {
 
    render() {
     return (
-      <Jumbotron className="text-center sample">
-        <span className={'warmupTitle ' + (this.state.warmupActive ? 'activeTitle' : null)}>Warmup</span>
-        <span className={'workoutTitle ' + (this.state.workoutActive ? 'activeTitle' : null)}>Workout</span>
-        <span className={'cooldownTitle ' + (this.state.cooldownActive ? 'activeTitle' : null)}>Cooldown</span>
-
+      <div className="main-container">
+      <Grid className="fluid">
+      <Row>
+        <Col xs={4}  md={4}>
+          <span className={'warmupTitle ' + (this.state.warmupActive ? 'activeTitle' : null)}>Warmup</span>
+        </Col>
+        <Col  xs={4}  md={4}>
+          <span className={'workoutTitle ' + (this.state.workoutActive ? 'activeTitle' : null)}>Workout</span>
+        </Col>
+        <Col  xs={4}  md={4}>
+          <span className={'cooldownTitle ' + (this.state.cooldownActive ? 'activeTitle' : null)}>Cooldown</span>
+        </Col>
+      </Row>  
+ 
         <Timer timer= {this.props.timer} />
         <Exercise exercise={this.props.exercise} />
         <ButtonToolbar className="ButtonToolbar">
@@ -60,9 +71,10 @@ class Workout extends React.Component {
           <Button onClick={this.props.goToDashboard} bsStyle="warning" bsSize="large">Quit & Back To Dashboard</Button>
           <Button onClick={this.props.goToSummary} bsStyle="info" bsSize="large">Summary</Button>
         </ButtonToolbar>
+        </Grid>
+        </div>
 
 
-      </Jumbotron>
     );
   }
 

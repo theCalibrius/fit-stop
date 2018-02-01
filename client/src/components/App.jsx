@@ -10,7 +10,7 @@ import Workout from './Workout.jsx'
 import History from './History.jsx'
 import Summary from './Summary.jsx'
 import '../img/pizzablue.png'
-import '../img/pizzablack.png'
+import {Grid, Row} from 'react-bootstrap'
 
 
 import PastWorkout from './PastWorkout.jsx'
@@ -341,11 +341,11 @@ class App extends React.Component {
     }
 
     return (
-      <div className="container-fluid">
-      <Jumbotron className="text-center sample Jumbotron">
+      <div>
+
         <Header username={this.state.username} goToLogin={this.goToLogin} goToSignUp={this.goToSignUp} loggedIn={this.state.loggedIn} logOut={this.logOut} showButtons={this.state.showButtons}/>
         {toBeRendered()}
-      </Jumbotron>
+      <div className="text-center sample main-content"></div>
     </div>
     )
   }
